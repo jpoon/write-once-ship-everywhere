@@ -1,0 +1,39 @@
+{
+  "name": "Cordova-Reveal",
+  "version": "0.1.0",
+  "description": "Cordova",
+  "scripts": {
+    "test": "grunt test",
+    "start": ""
+  },
+  "author": {
+    "name": "Jason Poon",
+    "email": "git@jasonpoon.ca",
+    "web": "www.jasonpoon.ca"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jpoon/Cordova-Reveal"
+  },
+  "engines": {
+    "node": "~0.10.0"
+  },
+  "dependencies": {
+    "underscore": "~1.8.3",
+    "express": "~4.14.0",
+    "mustache": "~2.2.1",
+    "socket.io": "~1.4.8"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~1.0.0",
+    "grunt-contrib-cssmin": "~1.0.1",
+    "grunt-contrib-uglify": "~1.0.1",
+    "grunt-contrib-watch": "~1.0.0",
+    "grunt-sass": "~1.2.0",
+    "grunt-contrib-connect": "~1.0.2",
+    "grunt-autoprefixer": "~3.0.4",
+    "grunt-zip": "~0.17.1",
+    "grunt": "~1.0.1"
+  },
+  "license": "MIT"
+}

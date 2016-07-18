@@ -1,0 +1,363 @@
+﻿<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>Write Once, Ship Everywhere</title>
+
+		<meta name="description" content="Confessions of a Cross-Platform Developer">
+		<meta name="author" content="Jason Poon">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/pikestreet.css" id="theme">
+
+		<!-- Code syntax highlighting - also available: visualstudio.css & zenburn.css -->
+		<link rel="stylesheet" href="lib/css/github.css">
+
+		<!-- Icons -->
+		<link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal pikestreet">
+
+			<div class="slides">
+				<section data-background="assets/containers.png" data-transition="slide-in fade-out">
+					<div class="accent">
+                        <h2>Write Once, Ship Everywhere</h2>
+                        <h4>Confessions of a Cross-Platform Developer</h4>
+					</div>
+
+                    <div class="gravatar">
+                        <img data-src="assets/author/jason.jpg" class="gravatar" style="border:1px solid white;margin:0.5em;width:5em;height:5em;"/>
+                    </div>
+
+					<small><b>Jason Poon</b> (@jasonthepoon)</br>
+					<i>Software Engineer, Microsoft</i></small>
+
+					<aside class="notes">
+					</aside>	
+				</section>
+
+                <section>
+                    <h2>Agenda</h2>
+                    </br>
+
+                    <div style="text-align:left">
+                        <p>1.  What kind of app should I build?</br>
+                            <p style="margin-left:3em;margin-bottom:1em;font-size:0.8em;">Native vs. Hybrid vs. Web App</p>
+                        </p>
+                        <p>2.  What is Apache Cordova?</p>
+                        <p>3.  TACO</p>
+                        <p>4.  Questions</p>
+                    </div>
+                </section>
+
+                <section>
+                    <img data-src="assets/canada.png" />
+                </section>
+
+				<section>
+					<div class="icon-group">
+						<i class="fa fa-android fa-fw" style="color: #A4C639"></i>
+						<i class="fa fa-apple fa-fw"></i>
+						<i class="fa fa-windows fa-fw" style="color: #008299"></i>
+					</div>
+
+					<aside class="notes">
+						- Fragmented ecosystem. What platform to build for? 
+                        - Testing matrix
+					</aside>	
+				</section>
+
+                <section>
+					<div>
+                        <table style="font-size:0.7em">
+                            <tr style="font-size:1.3em;font-weight:1000;">
+                                <th></th>
+                                <th>Native <i class="fa fa-mobile fa-fw"/></th>
+                                <th>Hybrid</th>
+                                <th>Web <i class="fa fa-globe fa-fw"/></th>
+                            </tr>
+                            <tr> 
+                                <td>Language:</td>
+                                <td>Native device language</td>
+                                <td>HTML/CSS/JS with cross-platform SDK</td>
+                                <td>HTML/CSS/JS</td>
+                            </tr> 
+                            <tr>
+                                <td>Distribution:
+                                <td>App Store</td>
+                                <td>App Store</td>
+                                <td>Web</td>
+                            </tr>
+                            <tr>
+                                <td>Native API Access:</td>
+                                <td><i class="fa fa-check" style="color: #A4C639"></i></td>
+                                <td><i class="fa fa-check" style="color: #A4C639"></i></td>
+                                <td><i class="fa fa-close" style="color: red"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Cross-Platform:</td>
+                                <td><i class="fa fa-close" style="color: red"></i></td>
+                                <td><i class="fa fa-check" style="color: #A4C639"></i></td>
+                                <td><i class="fa fa-check" style="color: #A4C639"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Dev Cost:</td>
+                                <td>High</td>
+                                <td>Moderate</td>
+                                <td>Minimal</td>
+                            </tr>
+                        </table>
+					</div>
+
+					<aside class="notes">
+					</aside>	
+				</section>
+
+				<section data-background="assets/patternbg2.png" data-background-size="700px" data-background-repeat="repeat">
+					<section>
+						<h1>Apache Cordova <img data-src="assets/icons/cordova.png" class="reset" style="vertical-align:bottom;width:100px;height:100px" /></h1>
+                        <br/>
+						<p><i class="fa fa-heart fa-fw"></i> 100% Shared Code</p>
+						<p><i class="fa fa-money fa-fw"></i> Open Source (ie. <i>free!</i>)</p>
+						<p><i class="fa fa-globe fa-fw"></i> Ease of Development</p>
+                        <aside class="notes">
+                            - consistent brand experience. truly one codebase
+                            - almost any JS library is in play
+                            - platform for building natively installed mobile apps
+                        </aside>                        
+					</section>
+					<section>
+						<h3>Untappd</h3>
+                        <div class="horizontal-scroll">
+                            <img data-src="assets/apps/untappd/screen1.jpeg"/>
+                            <img data-src="assets/apps/untappd/screen2.jpeg"/>
+                            <img data-src="assets/apps/untappd/screen3.jpeg"/>
+                            <img data-src="assets/apps/untappd/screen4.jpeg"/>
+                        </div>
+					</section>
+					<section>
+						<h3>Hockey Community</h3>
+                        <div class="horizontal-scroll">
+                            <img data-src="assets/apps/hockeycommunity/screen1.jpeg"/>
+                            <img data-src="assets/apps/hockeycommunity/screen2.jpeg"/>
+                            <img data-src="assets/apps/hockeycommunity/screen3.jpeg"/>
+                        </div>
+					</section>
+					<section>
+						<h3>TripCase</h3>
+                        <div class="horizontal-scroll">
+                            <img data-src="assets/apps/tripcase/screen1.jpeg" />
+                            <img data-src="assets/apps/tripcase/screen2.jpeg"/>
+                            <img data-src="assets/apps/tripcase/screen3.jpeg"/>
+                            <img data-src="assets/apps/tripcase/screen4.jpeg"/>
+                        </div>
+					</section>
+
+					<aside class="notes">
+                        - spectrum of shared code: 0% (build native), somewhere in the middle (Xarmarin, React Native), 100% (cordova)
+                        - share all your logic, views, etc.
+						- pattern amongst examples: no native experience but a consistent brand experience
+					</aside>	
+				</section>
+
+				<section>
+					<section>
+						<h1>Let's code!</h1>
+						<p>
+                            <ol>
+                                <li>Install Apache Cordova</li>
+                                <li>Build an app</li>
+                                <li>???</li>
+                                <li>Profit!</li>
+						    </ol>
+                        </p>
+
+						<br>
+						<i class="fa fa-arrow-down fa-2x"></i>
+					</section>
+
+					<section>
+						<i class="fa fa-arrow-up"></i>
+
+                        <div style="text-align:left">
+
+                            <p><strong>Install Dependencies:</strong></p>
+                            <p>node.js, git, SDKs (Android, Windows, Windows Phone, iOS), IDE (Android Studio, Visual Studio, Xcode), Google Chrome, Apache Ripple,  Apache ANT, Java 7, Apple iTunes, SQLite, WebSocket4Net</p>
+                            <br/>
+                            <p><strong>Configure Environment:</strong></p>
+                            <p>command-line targets, environment variables, etc.</p>
+
+                        </div>
+
+						<i class="fa fa-arrow-down"></i>
+
+                        <aside class="notes">
+                            - Cordova is a build platform for all the mobile OS's, hence, need to install all the SDKs
+                        </aside>	
+					</section>
+
+                    <section data-background-color="#800080" background-transition="zoom">
+						<h2>Visual Studio Tools <br /> for Apache Cordova</h2>
+
+                        <aside class="notes">
+                            - VS packages up all the dependencies
+                            Android 2.3.3+
+                            iOS 6+
+                            Windows 8 and 8.1
+                            Windows Phone 8 and 8.1
+                        </aside>	
+					</section>
+				</section>
+
+                <section>
+                    <h1>Demo</h1>
+
+                    <aside class="notes">
+                        - VS default project
+                        - Intellisense, syntax highlighting => HTML/CSS/Javascript/Typescript
+                        - Debug
+                        - Emulators
+                        - JS Framework => WinJS, Angular, Backbone
+                    </aside>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Plugins</h1>
+                        <br />
+                        <i class="fa fa-arrow-down fa-2x"></i>
+
+                        <aside class="notes">
+                            - Abstract native implementations exposing a common JS api
+                        </aside>	
+                    </section>
+
+                    <section>
+                        <h1><i class="fa fa-mobile"></i></h1>
+                        <p class="fragment fade-in">
+                            <small id="deviceProperties"></small>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h1><i class="fa fa-exclamation-triangle"></i></h1>
+                        <button onclick="window.alert('Hello');" style="font-size:75%">Click Me!</button>
+                    </section>
+
+                    <section>
+                        <h1><i class="fa fa-camera"></i></h1>
+                        <p><img id="photoCanvas" style="width: 200px; height: 200px;"/></p>
+                    </section>
+
+                    <section>
+                        <h2>...and many others!</h2>
+                    </section>
+                </section>
+
+                <section data-background="#ffffff" >
+                    <img src="assets/ninjacat.gif" class="noborder" />
+
+                    <small>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>References</th>
+                                    <th>URL</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="2">Jason Poon</td>
+                                    <td><i class="fa fa-twitter"></i> @jasonthepoon</td>
+                                </tr>
+                                <tr>
+                                    <td>www.jasonpoon.ca</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3">Talk</td>
+                                    <td><i class="fa fa-globe"></i> http://jpoon.github.io/Cordova-Reveal</td>
+                                </tr>
+                                <tr>
+                                    <td><img data-src="assets/icons/cordova.png" class="reset" style="width:25px;vertical-align:top;padding:0px;margin:0px;" /> www.github.com/jpoon/Cordova-Reveal-App</td>
+                                </tr>
+                                <tr>
+                                    <td>www.github.com/muzikllc/MuzikSDK</td>
+                                </tr>
+                                <tr>
+                                    <td>Visual Studio</td>
+                                    <td>www.visualstudio.com</td>
+                                </tr>
+                                <tr>
+                                    <td>Tools for Apache Cordova (TACO)</td>
+                                    <td>www.visualstudio.com/cordova-vs.aspx</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </small>
+                </section>
+            </div>
+        </div>
+
+
+		<script src="../scripts/jquery-2.1.3.min.js"></script>
+        <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script src="js/pikestreet.js"></script>
+
+        <!-- Cordova reference, this is added to your app when it's built. -->
+        <script src="../cordova.js"></script>
+        <script src="../scripts/platformOverrides.js"></script>
+        <script src="../scripts/index.js"></script>
+        <script src="../scripts/camera.js"></script>
+
+        <script type="text/javascript" charset="utf-8">
+            document.addEventListener("deviceready", onDeviceReady, false);
+
+            function onDeviceReady() {
+                // notification
+                if (navigator.notification) {
+                    window.alert = function (message) {
+                        navigator.notification.alert(
+                            message,    // message
+                            null,       // callback
+                            'Cordova', // title
+                            'OK'        // buttonName
+                        );
+                    };
+                }
+
+                // device properties
+                var element = document.getElementById('deviceProperties');
+                element.innerHTML = 'Device Model: '    + device.model    + '<br />' +
+                                    'Device Cordova: '  + device.cordova  + '<br />' +
+                            'Device Platform: ' + device.platform + '<br />' +
+                            'Device UUID: '     + device.uuid     + '<br />' +
+                            'Device Version: '  + device.version  + '<br />';
+            }
+        </script>
+	</body>
+</html>
