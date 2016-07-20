@@ -15,8 +15,7 @@
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/pikestreet.css" id="theme">
 
-		<!-- Code syntax highlighting - also available: visualstudio.css & zenburn.css -->
-		<link rel="stylesheet" href="lib/css/github.css">
+		<link rel="stylesheet" href="lib/css/visualstudio.css">
 
 		<!-- Icons -->
 		<link rel="stylesheet" href="../css/font-awesome.min.css">
@@ -44,7 +43,7 @@
 				<section data-background="assets/containers.png" data-transition="slide-in fade-out">
 					<div class="accent">
                         <h2>Write Once, Ship Everywhere</h2>
-                        <h4>Confessions of a Cross-Platform Developer</h4>
+                        <h4>Cross-Platform Development using Apache Cordova</h4>
 					</div>
 
                     <div class="gravatar">
@@ -141,7 +140,7 @@
                         <br/>
 						<p><i class="fa fa-heart fa-fw"></i> 100% Shared Code</p>
 						<p><i class="fa fa-money fa-fw"></i> Open Source (ie. <i>free!</i>)</p>
-						<p><i class="fa fa-globe fa-fw"></i> Ease of Development</p>
+						<p><i class="fa fa-fast-forward fa-fw"></i> Quick Development</p>
                         <aside class="notes">
                             - consistent brand experience. truly one codebase
                             - almost any JS library is in play
@@ -182,56 +181,46 @@
 					</aside>	
 				</section>
 
-				<section>
-					<section>
-						<h1>Let's code!</h1>
-						<p>
+                <section>
+                    <section>
+                        <h2>Let's code!</h2>
+                        <p>
                             <ol>
-                                <li>Install Apache Cordova</li>
+                                <li>Install Cordova</li>
                                 <li>Build an app</li>
                                 <li>???</li>
                                 <li>Profit!</li>
-						    </ol>
+                            </ol>
                         </p>
 
-						<br>
-						<i class="fa fa-arrow-down fa-2x"></i>
-					</section>
+                        <br/>
+                        <i class="fa fa-arrow-down"></i>
+                    </section>
 
-					<section>
-						<i class="fa fa-arrow-up"></i>
+                    <section>
+                        <p>1. Install Cordova</p>
+                        <pre><code data-trim data-noescape>
+npm install -g cordova-cli
+npm install -g ionic
+                        </code></pre>
+                        
+                        <br>
+                        <i class="fa fa-arrow-down"></i>
+                    </section>
 
-                        <div style="text-align:left">
+                    <section>
+                        <p>2. Build an app</p>
+                        <pre><code data-trim data-noescape>
+ionic start <mark>app-name</mark> blank
+ionic serve
+ionic platform add <mark>platform</mark>
+ionic build <mark>platform</mark>
+ionic emulate <mark>platform</mark>
+                        </code></pre>
+                    </section>
+                </section>
 
-                            <p><strong>Install Dependencies:</strong></p>
-                            <p>node.js, git, SDKs (Android, Windows, Windows Phone, iOS), IDE (Android Studio, Visual Studio, Xcode), Google Chrome, Apache Ripple,  Apache ANT, Java 7, Apple iTunes, SQLite, WebSocket4Net</p>
-                            <br/>
-                            <p><strong>Configure Environment:</strong></p>
-                            <p>command-line targets, environment variables, etc.</p>
-
-                        </div>
-
-						<i class="fa fa-arrow-down"></i>
-
-                        <aside class="notes">
-                            - Cordova is a build platform for all the mobile OS's, hence, need to install all the SDKs
-                        </aside>	
-					</section>
-
-                    <section data-background-color="#800080" background-transition="zoom">
-						<h2>Visual Studio Tools <br /> for Apache Cordova</h2>
-
-                        <aside class="notes">
-                            - VS packages up all the dependencies
-                            Android 2.3.3+
-                            iOS 6+
-                            Windows 8 and 8.1
-                            Windows Phone 8 and 8.1
-                        </aside>	
-					</section>
-				</section>
-
-                <section>
+               <section>
                     <h1>Demo</h1>
 
                     <aside class="notes">
@@ -275,6 +264,55 @@
                         <h2>...and many others!</h2>
                     </section>
                 </section>
+
+				<section>
+					<section>
+                        <div style="text-align:left">
+
+                            <p><strong>Install Dependencies:</strong></p>
+                            <p>node.js, npm, git, SDKs (Android, Windows, Windows Phone, iOS), IDEs (Android Studio, Visual Studio, Xcode), Google Chrome, Apache Ripple,  Apache ANT, Java 7, Apple iTunes, SQLite, WebSocket4Net</p>
+                            <br/>
+                            <p><strong>Configure Environment:</strong></p>
+                            <p>command-line targets, environment variables, etc.</p>
+
+                        </div>
+
+						<i class="fa fa-arrow-down"></i>
+
+                        <aside class="notes">
+                            - Cordova is a build platform for all the mobile OS's, hence, need to install all the SDKs
+                        </aside>	
+					</section>
+
+                    <section data-background-color="#682079">
+                        <img data-src="assets/icons/visual-studio.png"/>
+
+						<h2>Visual Studio TACO</h2>
+                        <p>(Tools for Apache Cordova)</p>
+
+                        <aside class="notes">
+                            - VS packages up all the dependencies
+                            Android 2.3.3+
+                            iOS 6+
+                            Windows 8 and 8.1
+                            Windows Phone 8 and 8.1
+                        </aside>	
+					</section>
+				</section>
+
+                <section>
+                    <h1>Demo</h1>
+
+                    <aside class="notes">
+                        - VS default project
+                        - Intellisense, syntax highlighting => HTML/CSS/Javascript/Typescript
+                        - Debug
+                        - Emulators
+                        - JS Framework => WinJS, Angular, Backbone
+                    </aside>
+                </section>
+
+
 
                 <section data-background="#ffffff" >
                     <img src="assets/ninjacat.gif" class="noborder" />
