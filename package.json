@@ -1,5 +1,5 @@
 {
-  "name": "Cordova-Reveal",
+  "name": "write-once-ship-everywhere",
   "version": "0.1.0",
   "description": "Cordova",
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/jpoon/Cordova-Reveal"
+    "url": "git://github.com/jpoon/write-once-ship-everywhere"
   },
   "engines": {
     "node": "~0.10.0"
